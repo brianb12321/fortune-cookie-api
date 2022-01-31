@@ -1,4 +1,4 @@
-package com.brianb12321.fortunecookie.fortunecookie;
+package com.brianb12321.fortunecookie;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
