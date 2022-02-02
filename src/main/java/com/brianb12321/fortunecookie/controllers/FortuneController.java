@@ -1,13 +1,9 @@
 package com.brianb12321.fortunecookie.controllers;
 
 import com.brianb12321.fortunecookie.models.FortuneModel;
-import com.brianb12321.fortunecookie.repositories.FortuneRepository;
 import com.brianb12321.fortunecookie.services.FortuneService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 import java.util.Random;
@@ -46,5 +42,10 @@ public class FortuneController {
         }
 
         return model.get();
+    }
+
+    @PostMapping
+    public void addFortune(@RequestBody FortuneModel body) {
+        fortuneService.addFortuneModel(body);
     }
 }

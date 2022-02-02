@@ -1,20 +1,18 @@
 package com.brianb12321.fortunecookie.models;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity(name = "Fortune")
 @Table()
-public class FortuneModel {
+public class FortuneModel implements Serializable {
     @Id
-    @SequenceGenerator(
-            name="fortuneId_sequence",
-            sequenceName = "fortuneId_sequence",
-            allocationSize = 1
-    )
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "fortuneId_sequence"
+            strategy = GenerationType.IDENTITY
     )
+    @Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private long fortuneId;
     private boolean isMisfortune;
     private String fortuneText;

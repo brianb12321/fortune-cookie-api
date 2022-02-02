@@ -10,4 +10,5 @@ public interface FortuneService {
     long[] getAllMisfortuneId();
 
     Optional<FortuneModel> getFortuneById(long id);
+    void addFortuneModel(FortuneModel model);
 }

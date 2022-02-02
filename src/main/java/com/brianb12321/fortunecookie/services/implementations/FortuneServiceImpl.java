@@ -35,4 +35,9 @@ public class FortuneServiceImpl implements FortuneService {
     public Optional<FortuneModel> getFortuneById(long id) {
         return repository.findById(id);
     }
+
+    @Override
+    public void addFortuneModel(FortuneModel model) {
+        repository.saveAndFlush(model);
+    }
 }
